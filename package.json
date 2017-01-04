@@ -1,0 +1,12 @@
+{
+  "name": "language-tks",
+  "version": "0.1.0",
+  "private": false,
+  "description": "TKS syntax highlighting",
+  "repository": "https://github.com/leesdolphin/language-tks",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}

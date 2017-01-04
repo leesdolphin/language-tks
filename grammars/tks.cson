@@ -1,0 +1,56 @@
+'name': 'TKS file'
+'scopeName': 'source.tks'
+'fileTypes': [
+  'tks'
+]
+'patterns': [
+  {
+    'include': '#comment'
+  }
+  {
+    'include': '#date'
+  }
+  {
+    'include': '#entry'
+  }
+]
+'repository':
+  'comment':
+    'begin': '(^[ \\t]+)?(?=#)'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.whitespace.comment.leading.tks'
+    'end': '(?!\\G)'
+    'patterns': [
+      {
+        'begin': '#'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.tks'
+        'end': '\\n'
+        'name': 'comment.line.tks'
+      }
+    ]
+  'date':
+    'name': 'entity.label.name.section.date.tks'
+    'patterns': [
+      {
+        'match': '^\d{4}([/-])(?:1[012]|0[1-9]|[1-9])\\1(?:3[01]|[012][1-9]|[1-9])',
+      }
+    ]
+  'entry':
+    'patterns': [
+      {
+        'match': '^\\s*(?:(\\d+)|(\\S+))\\s+([0-9.:-]+)\\s+(.*)$',
+        'captures':
+          '1':
+            'name': 'keyword.definition.directives.wr.tks'
+          '2':
+            'name': 'keyword.definition.directives.alias.tks'
+          '3':
+            'name': 'type.storage.duration.tks'
+          '4':
+            'name': 'string.raw.tks'
+      }
+    ]
+# (?i:#\\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday))?
